@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('databaseimage.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: peachpuff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+}
+
+.logo {
+    font-size: 2em;
+    color: black;
+    user-select: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #011;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: mediumpurple;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid mediumpurple;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #050505;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: mediumpurple;
+    color: powderblue;
+}
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 100px; /* To prevent overlap with header */
+}
+
+.movies-section {
+    width: 80%;
+    background-color: rgba(252, 251, 251, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px rgb(1, 95, 37);*/
+    margin: 20px auto;
+    text-align: left;
+}
+
+.movies-section h2 {
+    font-size: 2em;
+    color: #015f25;
+    margin-bottom: 20px;
+}
+
+.movies-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.movies-section ul li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.movies-section ul li h3 {
+    font-size: 1.5em;
+    color: #162938;
+}
+
+.movies-section ul li p {
+    font-size: 1.1em;
+    color: #111;
+}
+
+.movies-section ul li p strong {
+    color: #015f25;
+}
+.search {
+    --padding: 8px;
+    width: max-content;
+    padding: var(--padding);
+    border-bottom: 28px;
+    background: #cccccc;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    margin-right: 160px;
+}
+
+.search input[type="text"] {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: black;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: var(--padding);
+}
+
+.search button:hover {
+    background-color: seagreen;
+}
+
+.not-found {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.1em;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: 1px;
+    border-radius: 10px;
+    background: peachpuff;
+    margin: 10px auto;
+}

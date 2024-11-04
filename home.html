@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE335</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">CSE335</h2>
+        <nav class="navigation">
+            <form class="search" action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search..." required>
+<!--                <button type="submit">Search</button>-->
+            </form>
+            <a href="/">Home</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+<!--        <nav class="second-navigation">-->
+<!--            <a href="rating">Rating</a>-->
+<!--            <a href="runtime">Runtime</a>-->
+<!--            <a href="genre">Genre</a>-->
+<!--            <a href="metascore">Metascore</a>-->
+<!--            <a href="votes">Votes</a>-->
+<!--            <a href="gross">Gross</a>-->
+<!--        </nav>-->
+    </header>
+
+
+    <div class="parent-container">
+        <div class="movies-section">
+<!--            <h1>Movies</h1>-->
+            <ul>
+                {% if movies %}
+                    {% for movie in movies %}
+                    <li>
+                        <h3>{{ movie[1] }}</h3> <!-- Movie title -->
+                        <p><strong>Rating:</strong> {{ movie[2] }}</p> <!-- Rating -->
+                        <p><strong>Runtime:</strong> {{ movie[3] }}</p> <!-- Runtime -->
+                        <p><strong>Genre:</strong> {{ movie[4] }}</p> <!-- Genre -->
+                        <p><strong>Metascore:</strong> {{ movie[5] }}</p> <!-- Metascore -->
+                        <p><strong>Plot:</strong> {{ movie[6] }}</p> <!-- Plot -->
+                        <p><strong>Directors:</strong> {{ movie[7] }}</p> <!-- Directors -->
+                        <p><strong>Stars:</strong> {{ movie[8] }}</p> <!-- Stars -->
+                        <p><strong>Votes:</strong> {{ movie[9] }}</p> <!-- Votes -->
+                        <p><strong>Gross:</strong> {{ movie[10] }}</p> <!-- Gross -->
+                        <p> <a href="{{ movie[11] }}" target="_blank"><b>Learn more</b></a></p> <!-- Link -->
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="not-found">Not found!</li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- <script src="../static/script.js"></script> -->
+    <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
+    <!-- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+</body>
+</html>
